@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <h4>🌾 Welcome, <span id="farmerName"></span></h4>
+    <button class="btn btn-light btn-sm" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Add Plot -->
+      <div class="col-md-4">
+        <div class="card">
+          <h5>Add New Plot</h5>
+          <input type="text" id="plotName" class="form-control mb-2" placeholder="Plot Name">
+          <input type="number" id="area" class="form-control mb-2" placeholder="Area (acres)">
+          <input type="text" id="soilType" class="form-control mb-2" placeholder="Soil Type">
+          <button class="btn-green w-100" onclick="addPlot()">Add Plot</button>
+        </div>
+
+        <div class="card mt-3">
+          <h5>Add Sensor Reading</h5>
+          <select id="plotSelect" class="form-control mb-2"></select>
+          <input type="number" id="moisture" class="form-control mb-2" placeholder="Soil Moisture %">
+          <input type="number" id="temp" class="form-control mb-2" placeholder="Temperature °C">
+          <button class="btn-green w-100" onclick="addSensor()">Submit Reading</button>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-8">
+        <div class="card">
+          <h5>Your Plots</h5>
+          <div id="plotsList"></div>
+        </div>
+
+        <div class="card">
+          <h5>Latest AI Recommendations</h5>
+          <div id="recsList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
